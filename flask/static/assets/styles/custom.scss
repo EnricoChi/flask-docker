@@ -1,0 +1,47 @@
+html,
+body {
+  height: 100%;
+  background-color: #f0f2f7;
+  color: #868ba1;
+}
+
+h5 {
+  color: #42434d;
+}
+
+.bd-navbar {
+  height: 4rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ced4da;
+}
+
+.navbar-brand,
+.bd-navbar .navbar-nav .nav-link {
+  color: #656d75;
+}
+
+.bd-navbar .navbar-nav .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.navbar-brand:hover,
+.bd-navbar .navbar-nav .nav-link:hover {
+  color: #343a40;
+}
+
+main {
+  height: calc(100% - 4rem);
+}
+
+.toast-top-right {
+  top: 4.6rem;
+}
+
+// .toast {
+//   font-size: 1rem;
+// }

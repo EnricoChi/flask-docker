@@ -1,0 +1,27 @@
+# https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/
+version: '3.7'
+
+services:
+  web:
+    build:
+      context: ./flask
+      dockerfile: Dockerfile
+    command: gunicorn --bind 0.0.0.0:5000 wsgi:app
+    volumes:
+      - static_volume:/home/hz_tools/static
+      - media_volume:/home/hz_tools/media
+    expose:
+      - 5000
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/home/hz_tools/static
+      - media_volume:/home/hz_tools/media
+    ports:
+      - 5050:80
+    depends_on:
+      - web
+
+volumes:
+  static_volume:
+  media_volume:

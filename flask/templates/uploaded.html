@@ -1,0 +1,25 @@
+{% extends 'wrapper.html' %}
+
+{% block content %}
+<div class="row h-100">
+    <div class="col-4 mx-auto my-auto">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title mb-4">{{ title }}</h5>
+                {% for filename in file_list %}
+                <div class="d-flex">
+                    <div>{{ filename }}</div>
+                    <div class="ml-auto">
+                        <a href="{{ url_for('processed_file',**{'filename': filename}) }}"
+                            class="badge badge-success">Open page</a>
+                        <a download href="{{ url_for('download_file', **{'filename': filename}) }}"
+                            class="badge badge-primary">download</a>
+                    </div>
+                </div>
+                {% if not loop.last %}<hr>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
