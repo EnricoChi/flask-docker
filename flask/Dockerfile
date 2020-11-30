@@ -18,9 +18,9 @@ RUN apt-get update && \
 
 # lint
 RUN pip install --upgrade pip
-RUN pip install flake8
+# RUN pip install flake8
 COPY . /usr/src/app
-RUN flake8 --ignore=E501,F401 .
+# RUN flake8 --ignore=E501,F401 .
 
 # install python dependencies
 COPY ./requirements.txt .
@@ -44,7 +44,7 @@ RUN addgroup --system hz_tools && adduser --system --group hz_tools
 # create the appropriate directories
 ENV HOME=cd 
 ENV APP_HOME=/home/hz_tools/
-RUN mkdir $APP_HOME
+# RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 # install dependencies

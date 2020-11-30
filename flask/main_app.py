@@ -79,4 +79,3 @@ def uploaded():
     else:
         flash('Not have uploaded files.', 'warning')
         return redirect(url_for('form'))
-
