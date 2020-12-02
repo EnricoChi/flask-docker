@@ -46,3 +46,5 @@ $ docker-compose -f docker-compose.yml up -d --build
     - [ ] add PostgreSql
 - [ ] GitLab CI/CD
     - [ ] ----
+- [ ] SSL
+  - [ ] Let's Encrypt + Certbot
